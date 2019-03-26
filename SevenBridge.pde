@@ -1,3 +1,4 @@
+/* @pjs preload="img/back.png"; */
 PImage back;
 PFont font;
 float centerX = 150.0;
@@ -55,12 +56,15 @@ void init(){
   text("Clear",buttonX+16,buttonY+24);
   //red point
   int radius = 20;
-  strokeWeight(0);
+  noStroke();
   fill(255,0,0);
-  circle(centerX,centerY-h/2,radius);//A
-  circle(centerX-w/2,centerY,radius);//B
-  circle(centerX+w/2,centerY,radius);//C
-  circle(centerX,centerY+h/2,radius);//D
+  ellipse(centerX,centerY-h/2,radius,radius);//A
+  ellipse(centerX-w/2,centerY,radius,radius);//B
+  ellipse(centerX+w/2,centerY,radius,radius);//C
+  ellipse(centerX,centerY+h/2,radius,radius);//D
+  
+  strokeWeight(10);
+  stroke(255,255,0,95);
 }
 void mousePressed(){
   point(mouseX,mouseY);
